@@ -7,7 +7,7 @@ import requests
 
 def number_of_subscribers(subreddit):
     # Define the URL for the subreddit's about endpoint
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    url = "https://api.reddit.com/{}/about".format(subreddit)
     
     # Set a custom User-Agent to avoid Too Many Requests error
     headers = {'User-Agent': 'Mozilla/5.0'}
