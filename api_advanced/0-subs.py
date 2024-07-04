@@ -5,18 +5,16 @@ Contains the number_of_subscribers function
 import json
 import requests
 
-if __name__ == "__main__":
-    
-    def number_of_subscribers(subreddit):
-        # Define the URL for the subreddit's about endpoint
-        url = "https://api.reddit.com/r/{}/about".format(subreddit)
+def number_of_subscribers(subreddit):
+	# Define the URL for the subreddit's about endpoint
+       	url = "https://api.reddit.com/r/{}/about".format(subreddit)
         
         # Set a custom User-Agent to avoid Too Many Requests error
         headers = {'User-Agent': 'Mozilla/5.0'}
         
         try:
             # Make a GET request to the Reddit API
-            response = requests.get(url, headers=headers, allow_redirects=False)
+            response = requests.get(url,headers=headers,allow_redirects=False)
             
             # Check if the status code indicates a successful request
             if response.status_code == 200:
